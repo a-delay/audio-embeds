@@ -1,7 +1,7 @@
 //* TITLE soundcloud_player **//
 //* VERSION 1.0.0 **//
 //* DESCRIPTION	makes soundcloud player less big**//
-//* DEVELOPER adelay243 **//
+//* DEVELOPER a-delay **//
 //* FRAME false **//
 //* BETA false **//
 
