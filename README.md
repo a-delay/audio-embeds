@@ -1,4 +1,4 @@
-# xkit-soundcloud-player
+# soundcloud_player for xkit
 
 A cool third-party extension for XKit on Tumblr that turns big SoundCloud embeds into the smaller embed versions. The smaller ones look more like Tumblr's native audio player, which makes for a far more aesthetically coherent experience on your dash.
 
