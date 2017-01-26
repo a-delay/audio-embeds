@@ -21,7 +21,9 @@ Step 2: Navigate to XKit's editor. XKIT > Other > Advanced Settings: XKit Editor
 
 Step 3: Create a new extension and name it 'soundcloud_player' (without the single quotes)
 
-Step 4: Copy+paste <a href="">soundcloud_player.js</a> into the editor
+Step 4: Delete everything in the editor (don't worry we'll put it all back)
+
+Step 4: Copy+paste everything in <a href="">soundcloud_player.js</a> into the editor
 
 Step 5: Save and go back to Tumblr
 
