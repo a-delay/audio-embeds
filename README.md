@@ -18,7 +18,7 @@ Step 0: Download XKit if you don't already have it
 
 Step 1: Navigate to XKit's editor. XKIT > Other > Advanced Settings: XKit Editor > Open Editor
 
-Step 2: Create a new extension and name it 'soundcloud_player' (without the single quotes)
+Step 2: Create a new extension and name it 'soundcloud_player' (without the single quotes) <br><strong>Naming it soundcloud_player is important, don't name it something else</strong>
 
 Step 3: Delete everything in the editor (don't worry we'll put it all back)
 
