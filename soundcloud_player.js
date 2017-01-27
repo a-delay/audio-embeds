@@ -1,3 +1,4 @@
+
 //* TITLE soundcloud_player **//
 //* VERSION 1.0.0 **//
 //* DESCRIPTION	makes soundcloud player less big**//
@@ -27,6 +28,11 @@ XKit.extensions.soundcloud_player = new Object({
             		}
         	}
 
+        	$(".spotify_player").load(function(){
+        	        $(".spotify_player").css("height","80px");
+        	        $(".spotify_player").parent().css("height","auto");
+        	});
+
 
 	},
 
@@ -41,7 +47,10 @@ XKit.extensions.soundcloud_player = new Object({
 				iframes[i].height = "500px";
                 		iframes[i].src = newURL;
             		}
-        	}		
+        	}
+        	
+        	$(".spotify_player").parent().css("height","580px");
+        	$(".spotify_player").css("height","580px");		
 	}
 
 });
