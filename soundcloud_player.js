@@ -1,12 +1,12 @@
 
-//* TITLE soundcloud_player **//
-//* VERSION 1.0.1 **//
+//* TITLE smaller_audio_embeds **//
+//* VERSION 1.1.0 **//
 //* DESCRIPTION	makes soundcloud, spotify players less big**//
 //* DEVELOPER a-delay **//
 //* FRAME false **//
 //* BETA false **//
 
-XKit.extensions.soundcloud_player = new Object({
+XKit.extensions.smaller_audio_embeds = new Object({
 
 	running: false,
 
@@ -30,14 +30,14 @@ XKit.extensions.soundcloud_player = new Object({
 	run: function() {
 		this.running = true;
 
-		if(XKit.extensions.soundcloud_player.preferences.soundcloud_embeds.value){
-			XKit.post_listener.add("soundcloud_player_soundcloud",XKit.extensions.soundcloud_player.soundcloud_embed_replace);
-			XKit.extensions.soundcloud_player.soundcloud_embed_replace();
+		if(XKit.extensions.smaller_audio_embeds.preferences.soundcloud_embeds.value){
+			XKit.post_listener.add("smaller_audio_embeds_soundcloud",XKit.extensions.smaller_audio_embeds.soundcloud_embed_replace);
+			XKit.extensions.smaller_audio_embeds.soundcloud_embed_replace();
 		}
 
-		if(XKit.extensions.soundcloud_player.preferences.spotify_embeds.value){
-			XKit.post_listener.add("soundcloud_player_spotify",XKit.extensions.soundcloud_player.spotify_embed_replace);
-			XKit.extensions.soundcloud_player.spotify_embed_replace();
+		if(XKit.extensions.smaller_audio_embeds.preferences.spotify_embeds.value){
+			XKit.post_listener.add("smaller_audio_embeds_spotify",XKit.extensions.smaller_audio_embeds.spotify_embed_replace);
+			XKit.extensions.smaller_audio_embeds.spotify_embed_replace();
 		}
 	},
 
@@ -67,8 +67,8 @@ XKit.extensions.soundcloud_player = new Object({
 
 	destroy: function() {
 		this.running = false;
-		if(XKit.extensions.soundcloud_player.preferences.soundcloud_embeds.value){
-			XKit.post_listener.remove("soundcloud_player_soundcloud");
+		if(XKit.extensions.smaller_audio_embeds.preferences.soundcloud_embeds.value){
+			XKit.post_listener.remove("smaller_audio_embeds_soundcloud");
 
 			var iframes = document.getElementsByClassName("soundcloud_audio_player");
         		for(i = 0; i < iframes.length; i++){
@@ -81,8 +81,8 @@ XKit.extensions.soundcloud_player = new Object({
         		}
 		}
 
-		if(XKit.extensions.soundcloud_player.preferences.spotify_embeds.value){
-			XKit.post_listener.remove("soundcloud_player_spotify");
+		if(XKit.extensions.smaller_audio_embeds.preferences.spotify_embeds.value){
+			XKit.post_listener.remove("smaller_audio_embeds_spotify");
 
 			$(".spotify_player").parent().css("height","580px");
         		$(".spotify_player").css("height","580px");
