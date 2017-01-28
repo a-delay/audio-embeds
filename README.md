@@ -1,8 +1,6 @@
-# soundcloud_player for xkit
+# smaller_audio_embeds for xkit
 
-A cool third-party extension for New XKit on Tumblr that turns big SoundCloud embeds into the smaller embed versions. The smaller ones look more like Tumblr's native audio player, which makes for a far more aesthetically coherent experience on your dash.
-
-
+A cool third-party extension for New XKit on Tumblr that turns big SoundCloud and Spotify embeds into the smaller embed versions. The smaller ones look more like Tumblr's native audio player, which makes for a far more aesthetically coherent experience on your dash.
 
 Instead of:
 
@@ -11,6 +9,7 @@ Instead of:
 you get:
 
 <img src="http://68.media.tumblr.com/b2c9f0cc3d86e42c68b7d4ffcc555290/tumblr_okdja17MPx1rjdup1o2_1280.png" alt="small SoundCloud embed" width="450px">
+
 
 ## installation
 
