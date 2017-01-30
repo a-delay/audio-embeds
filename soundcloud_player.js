@@ -1,21 +1,47 @@
-//* TITLE soundcloud_player **//
-//* VERSION 1.0.0 **//
-//* DESCRIPTION	makes soundcloud player less big**//
+
+//* TITLE smaller_audio_embeds **//
+//* VERSION 1.1.0 **//
+//* DESCRIPTION	makes soundcloud, spotify players less big**//
 //* DEVELOPER a-delay **//
 //* FRAME false **//
 //* BETA false **//
 
-XKit.extensions.soundcloud_player = new Object({
+XKit.extensions.smaller_audio_embeds = new Object({
 
 	running: false,
 
-	run: function() {
-		this.running = true;
-        	XKit.post_listener.add("soundcloud_player",XKit.extensions.soundcloud_player.embed_replace);
-        	XKit.extensions.soundcloud_player.embed_replace();
+	preferences: {
+		"sep0": {
+			text: "Options",
+			type: "separator"
+		},
+		"soundcloud_embeds": {
+			text: "Make SoundCloud embeds smaller",
+			default: true,
+			value: true
+		},
+		"spotify_embeds": {
+			text: "Make Spotify embeds smaller",
+			default: true,
+			value: true
+		}
 	},
 
-	embed_replace: function() {
+	run: function() {
+		this.running = true;
+
+		if(XKit.extensions.smaller_audio_embeds.preferences.soundcloud_embeds.value){
+			XKit.post_listener.add("smaller_audio_embeds_soundcloud",XKit.extensions.smaller_audio_embeds.soundcloud_embed_replace);
+			XKit.extensions.smaller_audio_embeds.soundcloud_embed_replace();
+		}
+
+		if(XKit.extensions.smaller_audio_embeds.preferences.spotify_embeds.value){
+			XKit.post_listener.add("smaller_audio_embeds_spotify",XKit.extensions.smaller_audio_embeds.spotify_embed_replace);
+			XKit.extensions.smaller_audio_embeds.spotify_embed_replace();
+		}
+	},
+
+	soundcloud_embed_replace: function() {
 
         	var iframes = document.getElementsByClassName("soundcloud_audio_player");
         	for(i = 0; i < iframes.length; i++){
@@ -26,22 +52,44 @@ XKit.extensions.soundcloud_player = new Object({
                 		iframes[i].src = newURL;
             		}
         	}
+	},
+
+	spotify_embed_replace: function() {
+
+ 
+        	$(".spotify_player").load(function(){
+        	        $(".spotify_player").css("height","80px");
+        	        $(".spotify_player").parent().css("height","auto");
+        	});
 
 
 	},
 
 	destroy: function() {
 		this.running = false;
-		XKit.post_listener.remove("soundcloud_player");
-		var iframes = document.getElementsByClassName("soundcloud_audio_player");
-        	for(i = 0; i < iframes.length; i++){
-            		var url = iframes[i].src;
-            		if(url.indexOf("visual=false")!= -1){
-                		var newURL = url.replace("visual=false", "visual=true");
-				iframes[i].height = "500px";
-                		iframes[i].src = newURL;
-            		}
-        	}		
+		if(XKit.extensions.smaller_audio_embeds.preferences.soundcloud_embeds.value){
+			XKit.post_listener.remove("smaller_audio_embeds_soundcloud");
+
+			var iframes = document.getElementsByClassName("soundcloud_audio_player");
+        		for(i = 0; i < iframes.length; i++){
+            			var url = iframes[i].src;
+            			if(url.indexOf("visual=false")!= -1){
+                			var newURL = url.replace("visual=false", "visual=true");
+					iframes[i].height = "500px";
+                			iframes[i].src = newURL;
+            			}
+        		}
+		}
+
+		if(XKit.extensions.smaller_audio_embeds.preferences.spotify_embeds.value){
+			XKit.post_listener.remove("smaller_audio_embeds_spotify");
+
+			$(".spotify_player").parent().css("height","580px");
+        		$(".spotify_player").css("height","580px");
+		}
+	
+        	
+        			
 	}
 
 });
