@@ -21,7 +21,7 @@ Step 2: Create a new extension and name it 'smaller_audio_embeds' (without the s
 
 Step 3: Delete everything in the editor (don't worry we'll put it all back)
 
-Step 4: Copy+paste everything in <a href="https://github.com/a-delay/xkit-soundcloud-player/blob/master/soundcloud_player.js">soundcloud_player.js</a> into the editor
+Step 4: Copy+paste everything in <a href="https://github.com/a-delay/xkit-soundcloud-player/blob/master/soundcloud_player.js">smaller_audio_embeds.js</a> into the editor
 
 Step 5: Save and go back to Tumblr and marvel at how much space you're saving
 
