@@ -48,7 +48,7 @@ XKit.extensions.smaller_audio_embeds = new Object({
             		var url = iframes[i].src;
             		if(url.indexOf("visual=true")!= -1){
                 		var newURL = url.replace("visual=true", "visual=false");
-				iframes[i].height = "auto";
+				iframes[i].height = "116";
                 		iframes[i].src = newURL;
             		}
         	}
